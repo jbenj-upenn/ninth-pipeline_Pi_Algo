@@ -9,13 +9,13 @@ stages {
     stage('Requirements') {
         steps {
             // MAKE SURE SCRIPT CAN BE EXECUTED DIRECTY IN A SHELL
-            sh('chmod +x ./algorithm.sh')
+            sh('chmod +x ./calculatePi.sh')
         }
   }
     stage('Build') {
         steps {
             // CREATE A FILE NAMED report.txt
-            SH('./algorithm.sh')
+            SH('./calculatePi.sh')
             // ARCHIVE THE REPORT
             archiveArtifacts allowEmptyArchive: true,
                 artifacts: '*.txt',
