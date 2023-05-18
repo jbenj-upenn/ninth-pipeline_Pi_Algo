@@ -15,7 +15,7 @@ stages {
     stage('Build') {
         steps {
             // CREATE A FILE NAMED report.txt
-            SH('./calculatePi.sh')
+            sh('./calculatePi.sh')
             // ARCHIVE THE REPORT
             archiveArtifacts allowEmptyArchive: true,
                 artifacts: '*.txt',
